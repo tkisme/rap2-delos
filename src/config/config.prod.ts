@@ -14,7 +14,7 @@ let config: IConfigOptions = {
   db: {
     dialect: 'mysql',
     host: process.env.MYSQLHOST || 'localhost',
-    port: (process.env.MYSQLPORT && parseInt(process.env.MYSQL_PORT)) || 3306,
+    port: (process.env.MYSQLPORT && parseInt(process.env.MYSQLPORT)) || 3306,
     username: process.env.MYSQLUSER || 'root',
     password: process.env.MYSQLPASSWORD || '',
     database: process.env.MYSQL_SCHEMA || 'rap',
@@ -28,8 +28,7 @@ let config: IConfigOptions = {
   },
   redis: {
     host: process.env.REDISHOST || 'localhost',
-    port: (process.env.REDISPORT && parseInt(process.env.REDIS_PORT)) || 6379,
-    username: process.env.REDISUSER || '',
+    port: (process.env.REDISPORT && parseInt(process.env.REDISPORT)) || 6379,
     password: process.env.REDISPASSWORD || undefined,
   },
   mail: {
