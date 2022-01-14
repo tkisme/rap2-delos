@@ -13,13 +13,13 @@ let config: IConfigOptions = {
   },
   db: {
     dialect: 'mysql',
-    host: process.env.MYSQL_URL || 'localhost',
-    port: (process.env.MYSQL_PORT && parseInt(process.env.MYSQL_PORT)) || 3306,
-    username: process.env.MYSQL_USERNAME || 'root',
-    password: process.env.MYSQL_PASSWD || '',
+    host: process.env.MYSQLHOST || 'localhost',
+    port: (process.env.MYSQLPORT && parseInt(process.env.MYSQL_PORT)) || 3306,
+    username: process.env.MYSQLUSER || 'root',
+    password: process.env.MYSQLPASSWORD || '',
     database: process.env.MYSQL_SCHEMA || 'rap',
     pool: {
-      max: 80,
+      max: 4,
       min: 0,
       idle: 20000,
       acquire: 20000,
@@ -27,9 +27,9 @@ let config: IConfigOptions = {
     logging: false,
   },
   redis: {
-    host: process.env.REDIS_URL || 'localhost',
-    port: (process.env.REDIS_PORT && parseInt(process.env.REDIS_PORT)) || 6379,
-    password: process.env.REDIS_PWD || undefined,
+    host: process.env.REDISHOST || 'localhost',
+    port: (process.env.REDISPORT && parseInt(process.env.REDIS_PORT)) || 6379,
+    password: process.env.REDISPASSWORD || undefined,
   },
   mail: {
     host: process.env.MAIL_HOST ?? 'smtp.aliyun.com',
