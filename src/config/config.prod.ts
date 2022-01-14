@@ -29,6 +29,7 @@ let config: IConfigOptions = {
   redis: {
     host: process.env.REDISHOST || 'localhost',
     port: (process.env.REDISPORT && parseInt(process.env.REDIS_PORT)) || 6379,
+    username: process.env.REDISUSER || '',
     password: process.env.REDISPASSWORD || undefined,
   },
   mail: {
