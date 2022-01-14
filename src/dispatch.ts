@@ -8,9 +8,7 @@ cluster.setupMaster({
 })
 
 if (cluster.isMaster) {
-  require('os').cpus().forEach(() => {
-    cluster.fork()
-  })
+  cluster.fork()
   cluster.on('listening', (worker, address) => {
     console.error(`[${now()}] master#${process.pid} worker#${worker.process.pid} is now connected to ${address.address}:${address.port}.`)
   })
